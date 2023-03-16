@@ -8,15 +8,15 @@ public class Pratica {
 		
 		//Declaração de variáveis
 		String nome = new String("");
+		int [] checkpoints = new int[3];
 		int challenge = 0;
 		int globalSolution = 0;
-		int [] checkpoints = new int[3];
-		double mediaCheckpointsChallenge = 0f;
+		//Media
+		double mediaCheckpointsChallenge = 0;
 		double mediaGeral = 0;
 		
+		//Declaração do Scanner
 		Scanner entrada = new Scanner(System.in);
-		
-		
 		
 		//Pegando nome do aluno
 		System.out.print("Digite o nome do aluno: ");
@@ -56,19 +56,18 @@ public class Pratica {
 
 		}
 		
+		mediaCheckpointsChallenge = (checkpoints[0] + checkpoints[1] + checkpoints[2])/3;
+		
 		//Pegando nota do Challenge
 		System.out.print("Digite a nota Challenge: ");
 		challenge = entrada.nextInt();
-		
-		mediaCheckpointsChallenge = (mediaCheckpointsChallenge + challenge);
 		
 		//Pegando nota da global solution
 		System.out.print("Digite a nota da Global Solution: ");
 		globalSolution = entrada.nextInt();
 		
 		//Media
-		
-		mediaGeral = ((mediaCheckpointsChallenge * 0.4) + (globalSolution * 0.6))/ 1.8; 
+		mediaGeral = mediaCheckpointsChallenge*0.2 + challenge*0.2 + globalSolution*0.6; 
 		
 		//Exibição do nome + média
 		System.out.println("O aluno " + nome + " teve media igual a: " + mediaGeral);
